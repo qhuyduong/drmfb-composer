@@ -8,6 +8,7 @@ LOCAL_MODULE := android.hardware.graphics.composer@2.1-service.drmfb
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_VENDOR_MODULE := true
 LOCAL_INIT_RC := android.hardware.graphics.composer@2.1-service.drmfb.rc
+LOCAL_VINTF_FRAGMENTS := android.hardware.graphics.composer@2.1-service.drmfb.xml
 
 LOCAL_CPP_STD := c++17
 
