@@ -31,17 +31,9 @@ void addFramebuffer(int fd, cros_gralloc_handle_t handle, int planes, uint32_t* 
         }
     }
 
-    /*
-     * Avoid using alpha bits for the framebuffer.
-     * They are not supported on older Intel GPUs for primary planes.
-     */
-    auto format = handle->format;
-    if (format == DRM_FORMAT_ABGR8888)
-        format = DRM_FORMAT_XBGR8888;
-
     // TODO: Consider using drmModeAddFB2WithModifiers
     if (drmModeAddFB2(fd, handle->width, handle->height,
-            format, handles, handle->strides, handle->offsets, id, 0)) {
+            DRM_FORMAT_XRGB8888, handles, handle->strides, handle->offsets, id, 0)) {
         PLOG(ERROR) << "drmModeAddFB2 failed";
     }
 }
