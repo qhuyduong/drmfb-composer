@@ -47,6 +47,7 @@ ifeq ($(strip $(BOARD_USES_MINIGBM)), true)
     LOCAL_CFLAGS += -DUSE_MINIGBM
     LOCAL_SRC_FILES += DrmFramebufferMinigbm.cpp
     LOCAL_C_INCLUDES += $(MINIGBM_PATH)/cros_gralloc
+    LOCAL_HEADER_LIBRARIES += libnativebase_headers libarect_headers
     LOCAL_SHARED_LIBRARIES += libnativewindow # TODO: Remove
 endif
 
