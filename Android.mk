@@ -19,12 +19,14 @@ LOCAL_SRC_FILES := \
     DrmDisplay.cpp \
     DrmFramebuffer.cpp \
     DrmFramebufferLibDrm.cpp \
+    DrmFramebufferQti.cpp \
     GraphicsThread.cpp \
     DrmVsyncThread.cpp \
     DrmHotplugThread.cpp
 
 LOCAL_HEADER_LIBRARIES := \
-    android.hardware.graphics.composer@2.1-hal
+    android.hardware.graphics.composer@2.1-hal \
+    display_intf_headers
 
 LOCAL_SHARED_LIBRARIES := \
     libbase \
@@ -37,6 +39,7 @@ LOCAL_SHARED_LIBRARIES := \
     liblog \
     libsync \
     libutils \
+    libgralloc.qti \
     android.hardware.graphics.common@1.0 \
     android.hardware.graphics.composer@2.1 \
     android.hardware.graphics.composer@2.1-resources

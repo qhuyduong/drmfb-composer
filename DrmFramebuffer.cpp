@@ -23,6 +23,8 @@ uint32_t addFramebuffer(int fd, buffer_handle_t buffer) {
         return id;
     if (minigbm::addFramebuffer(fd, buffer, &id))
         return id;
+    if (qti::addFramebuffer(fd, buffer, &id))
+        return id;
 
     LOG(ERROR) << "No importer available for buffer with "
         << buffer->numFds << " FDs and " << buffer->numInts << " ints";

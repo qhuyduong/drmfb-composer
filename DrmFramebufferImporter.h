@@ -26,6 +26,10 @@ namespace minigbm {
 #endif
 }
 
+namespace qti {
+    bool addFramebuffer(int fd, buffer_handle_t buffer, uint32_t* id);
+}
+
 }  // namespace drmfb
 }  // namespace V2_1
 }  // namespace composer
